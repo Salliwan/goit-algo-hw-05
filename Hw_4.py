@@ -36,10 +36,8 @@ def change_contact(args, contacts):
 @input_error
 def show_phone(args, contacts):
     name = args[0]
-    if name in contacts:
-        return contacts[name]
-    else:
-        return "Contact not found."
+    return contacts[name]
+
 
 @input_error
 def show_all(contacts):
