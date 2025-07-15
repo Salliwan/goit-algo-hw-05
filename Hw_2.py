@@ -7,7 +7,7 @@ import re
 def generator_numbers(text):
 
     # Шаблон для пошуку чисел
-    pattern = r"\b\d+\.\d+|\d+\b"
+    pattern = r"\d+\.\d+|\d+"
 
     # Пошук чисел
     numbers = re.findall(pattern, text) 
