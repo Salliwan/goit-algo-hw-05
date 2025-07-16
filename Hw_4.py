@@ -11,8 +11,7 @@ def input_error(func):
         except Exception as e:
             return f"Error while displaying contacts: {e}"
     return inner
-
-
+@input_error
 def parse_input(user_input):
     cmd, *args = user_input.strip().split()
     cmd = cmd.lower()
