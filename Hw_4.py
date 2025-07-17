@@ -11,10 +11,14 @@ def input_error(func):
         except Exception as e:
             return f"Error while displaying contacts: {e}"
     return inner
+
 @input_error
 def parse_input(user_input):
-    cmd, *args = user_input.strip().split()
-    cmd = cmd.lower()
+    parts = user_input.strip().split()
+    if not parts:
+        return "", []
+    cmd = parts[0].lower()
+    args = parts[1:]
     return cmd, args
 
 @input_error
@@ -69,6 +73,8 @@ def main():
             print(show_phone(args, contacts))
         elif command == "all":
             print(show_all(contacts))
+        elif command == "":
+            print("Please enter a command.")
         else:
             print("Invalid command.")
 
